@@ -1,32 +1,26 @@
-# Modular Resume 😙
+# Modular Resume (spiralsim's Version)
 
-## What is it? 🤨
+# Key Features
+This is an elegant, even more easy-to-use version of [@petezh's Modular Resume](https://github.com/petezh/Modular-Resume).
 
-This modular is a component-based Latex template optimized for people who need multiple versions of their resumes.
+My version makes several additional improvements (at least for how I make my resumes):
+1. Importing a list of components is simplified to just typing each component's ID.
+2. Custom commands are available for frequent entry types: `\award`, `\experience`, and `\publication`.
+3. The layout is even more dense, allowing more entries to be crammed in.
+4. All colors are now black-and-white, making the resume look the same when printed.
+5. The workflow works with plain LaTeX, no longer requiring LuaLaTeX.
 
-👀 Check out [an example](/resume-general/Peter_Zhang_Resume.pdf) of the default resume
+# Examples
+- [My default digital resume (sans-serif)](/resumes/engineering/Jeffrey_Tong_Resume.pdf)
 
-🛠 An [example](../cv/cv-academic/Peter_Zhang_Resume.pdf) of how to modify the default template
+# Quick Start
+## Installation
+Either use the Overleaf template directly or clone this repo and compile with TeX locally.
 
-🍃 Get it on [OverLeaf](https://www.overleaf.com/latex/templates/modular-resume/kyghjmzkfzwb)
+## Personalization
+It should be pretty straightforward to just pattern-match exactly the components you need **if you have a decent understanding of LaTeX**. 
 
-👇 Why you should get it
-
-Some advantages over your run-of-the-mill template include:
-
-- **Modular**: Easily make multiple versions of your resume by important different components.
-- **Design**: A modern look with pretty emojis. 😌
-- **Dense**: Adjustable, compact structure lets you pack as much content as your heart desires.
-- **Adaptable**: Sections are customizable to your needs. Add your own custom "volunteering" or "interests" section.
-- **Hyperlinks**: Links to your social medias and external sites.
-- **Parsing**: ATS-friendly formatting will save you time from manually fixing errors.
-
-## How do I use it? 🤔
-
-Either use it directly on [OverLeaf](https://www.overleaf.com/latex/templates/modular-resume/kyghjmzkfzwb) (easiest) or clone this repo. Be sure to use **LuaLaTeX** if you plan on using the emojis. Otherwise, you can take them out and use any Latex typesetting system. To set it up for yourself, add your background, skills, experiences, projects, education, and awards to separate `.tex` files in the `components` folder. Make a folder for your resume in the root directory and compile! If you move around the main file, be sure to update the file paths.
-
-Want to make a new version or fix a bug? Please fork the repo or make a pull-request!
-
-## Have a question? 🙋‍♂️
-
-Feel free to reach out to me on [Facebook](https://www.facebook.com/petejzh/) or at [petez@berkeley.edu](mailto:petez@berkeley.edu) for questions!
+For some hints, here's a list of every file/folder you'll need to modify:
+1. `/common.sty` starting from `\newenvironment{resume}`
+2. Create a folder `/resumes/<resume name>/` for each resume you want to create (ex. `/resumes/general/`, `/resumes/research/`, `/resumes/teaching/`, etc.) You can do this quickly by making a copy of an existing resume folder.
+3. `/entries/` and all subfolders should be filled with new a `.tex` file for each entry you'd like to add
